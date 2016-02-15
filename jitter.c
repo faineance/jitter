@@ -9,7 +9,7 @@ struct asm_buffer {
     uint8_t code[PAGE_SIZE];
 };
 
-struct asmbuffer *asm_create(void) {
+struct asm_buffer *asm_create(void) {
     int prot = PROT_READ | PROT_WRITE;
     int flags = MAP_ANONYMOUS | MAP_PRIVATE;
     return mmap(NULL, PAGE_SIZE, prot, flags, -1, 0);
